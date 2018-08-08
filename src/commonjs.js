@@ -1,7 +1,7 @@
-import User from './user';
+const { User } = require('./user');
 const owner = new User('yuno');
 
-import Blog from './blog';
+const { Blog } = require('./blog');
 const blog = new Blog(owner);
 
 console.log(blog);
