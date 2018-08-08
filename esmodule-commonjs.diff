@@ -1,0 +1,29 @@
+diff --git a/./dist/index.js b/./dist/commonjs.js
+index 252b543..05b74d3 100644
+--- a/./dist/index.js
++++ b/./dist/commonjs.js
+@@ -1,17 +1,13 @@
+ 'use strict';
+ 
+-var _user = require('./user');
++var _require = require('./user'),
++    User = _require.User;
+ 
+-var _user2 = _interopRequireDefault(_user);
++var owner = new User('yuno');
+ 
+-var _blog = require('./blog');
++var _require2 = require('./blog'),
++    Blog = _require2.Blog;
+ 
+-var _blog2 = _interopRequireDefault(_blog);
+-
+-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+-
+-var owner = new _user2.default('yuno');
+-
+-var blog = new _blog2.default(owner);
++var blog = new Blog(owner);
+ 
+ console.log(blog);
+\ No newline at end of file
